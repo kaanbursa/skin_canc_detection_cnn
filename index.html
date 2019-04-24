@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Ben Analizi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cilt Hastaliklarina Tehşis Koy.">
+
+
+<!--Code to prevent the browser from caching the page-->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+
+
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/skin.css">
+
+<!--Link to Font Awesome icons-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
+
+<!--Link to fonts from google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="robotfavicon\ copy.png">
+
+
+
+
+<style>
+html,body,h2,h3,h4 {font-family: Helvetica, sans-serif}
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div>
+
+
+
+<!-- 1. HOME PAGE TAB -->
+<div class="tabbed w3-animate-opacity" id="home">
+
+
+
+<!-- Header -->
+<header class="blog-header py-3" style='margin: 20px;'>
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <i class="fa fa-heart w3-padding" style="font-size:40px;color:red"></i>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-white" href="#">Ben'ini Incele</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        
+      </div>
+    </div>
+  </header>
+
+
+
+
+<!-- Front page image -->
+<!-- This image will be replaced once the js code runs. -->
+<div class="w3-center">
+	<img id="selected-image" class="w3-round adjust-image" src="assets/doctor.png" alt=""> 
+</div> 
+
+
+<div class="w3-center">
+	<div class="progress-bar">Model Yükleniyor...</div>
+</div>
+
+
+<div class="w3-center add-padding w3-border add-margin side-margin w3-round ">
+		
+	<h5 class='new-font'>Sonuçlar</h5>
+	<ol class='w3-left-align' id='prediction-list'></ol>
+		
+</div>
+
+
+<!-- Button -->
+<div id="btnn" class="w3-center bottom-padding">
+	
+	<button class="w3-btn w3-blue w3-round w3-margin-bottom adjust-spacing zoom btn-font w3-padding w3-space-letters w3-card-4" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i><b>Resim Ekle</b></button>
+</div> 
+<div class="col-md-8 themed-grid-col">
+	
+	<ol class='w3-left-align' id='desc-list'></ol>
+		
+</div>
+
+
+</div><!--END OF HOME PAGE TAB-->
+
+
+
+<!-- We simulate clicks on these two. -->
+<div class="hide">
+	<button id='predict-button'>Tahmin Et</button>
+</div>
+
+<div class="hide">
+	<input id="image-selector" type="file">
+</div>
+<!--===================================-->
+
+
+	<!-- Load jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+	<!-- Load TensorFlow.js -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
+	</script>
+	
+	<!-- NOTE:
+	Change the predict.js file name (change the number) each time you modify the predict.js file.
+	This will force the browser to load the latest predict.js and not load
+	the predict.js file that is in the user's cache.
+	There is a stackoverflow soulution that says to add a version to the js file. 
+	But it could be that some browsers can ignore the version. Therefore I think
+	it's safer to change the js file name.-->
+	<script src="jscript/skin_classes.js"></script>
+	<script src="jscript/predict202.js"></script> 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	
+	
+	
+</div> <!-- w3-content -->
+
+</body>
+</html>
+
